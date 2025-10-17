@@ -1,4 +1,5 @@
-![CI](https://github.com/ktalpay/CarbonOps/actions/workflows/ci.yml/badge.svg)
+[![CI](https://github.com/ktalpay/CarbonOps/actions/workflows/ci.yml/badge.svg)](https://github.com/ktalpay/CarbonOps/actions/workflows/ci.yml)
+
 
 # CarbonOps
 
