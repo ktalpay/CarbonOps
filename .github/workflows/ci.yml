@@ -1,5 +1,6 @@
 name: CI
 on:
+  workflow_dispatch: {}        # ← Elle ‘Run workflow’ butonu çıkar
   push: { branches: [ main ] }
   pull_request: { branches: [ main ] }
 jobs:
