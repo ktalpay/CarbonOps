@@ -1,3 +1,5 @@
+![CI](https://github.com/ktalpay/CarbonOps/actions/workflows/ci.yml/badge.svg)
+
 # CarbonOps
 
 CarbonOps is an open‑source, carbon‑aware DevOps toolkit. It lets you:
