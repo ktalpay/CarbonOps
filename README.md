@@ -10,14 +10,10 @@ CarbonOps is an open‑source, carbon‑aware DevOps toolkit. It lets you:
 ## Quickstart
 
 ```bash
-# 1) install
-pip install -U carbonops
-
-# 2) check CLI
-carbonops --help
-
-# 3) simulate a scheduling decision for London (GB) at current time
-carbonops schedule --region gb_london --duration 30m --mode delay
+git clone https://github.com/ktalpay/CarbonOps.git
+cd CarbonOps
+pip install -e .
+carbonops version
 ```
 
 ## Features (v0.1 target)
