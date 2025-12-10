@@ -1,13 +1,13 @@
-# Contributing
+# Contributing to CarbonOps  
+Thank you for your interest in contributing to CarbonOps — an open-source sustainability toolkit by **FutureOps Technology Ltd**.
 
-Thanks for your interest in CarbonOps!
+We welcome contributions of all kinds: features, bug fixes, documentation, tests, and discussions.
 
-- Use issues to propose features/bug reports.
-- For a pull request:
-  1) Fork repository
-  2) Create a feature branch
-  3) Add tests if applicable
-  4) Run `pytest` and linters
-  5) Open PR referencing an issue
+---
 
-By contributing you agree that your contributions will be licensed under the MIT License.
+# 🛠 Development Setup
+
+```bash
+git clone https://github.com/ktalpay/CarbonOps.git
+cd CarbonOps
+pip install -e ".[dev]"
