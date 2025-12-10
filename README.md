@@ -3,9 +3,9 @@
 # 🌍 CarbonOps — AI/ML Ops–Ready Carbon Emission Automation Toolkit  
 **Open-source sustainability engine for carbon-intensity data, automated CO₂e calculations, DevOps carbon-aware scheduling, and ML-ready datasets.**
 
-CarbonOps is a modular, open-source sustainability toolkit designed to automate and standardize carbon-emission workflows using officially published datasets from **DEFRA**, **IPCC**, and global GHG reporting standards.
+CarbonOps is a modular sustainability toolkit that automates and standardizes carbon-emission workflows using officially published datasets from **DEFRA**, **IPCC**, and global GHG reporting standards.
 
-CarbonOps provides:
+It provides:
 
 - **Dataset ingestion & normalization** (CarbonFactor-Parser)  
 - **REST API for CO₂e calculations & factor lookup** (CarbonFactor-API)  
@@ -13,23 +13,23 @@ CarbonOps provides:
 - **HuggingFace datasets + notebooks + examples**  
 - **ML-Ops–friendly data pipelines** for future model training  
 
-> Status: **pre-alpha (v0.0.1)** — API may evolve.
+> Status: **pre-alpha (v0.0.1)** — API and internal structure may evolve.
 
 ---
 
-# 🔥 Why CarbonOps?
+## 🔥 Why CarbonOps?
 
-Modern companies struggle with:
+Modern organizations face major challenges:
 
-- Manual carbon reporting  
-- Inconsistent datasets  
-- Excel-based workflows  
-- Lack of reproducibility  
-- No automation or ML-driven estimation  
+- Manual or inconsistent carbon reporting  
+- Scattered datasets and Excel-based workflows  
+- Limited reproducibility  
+- Lack of automation  
+- No ML-driven estimation or validation  
 
 **CarbonOps standardizes the entire pipeline.**
 
-Give CarbonOps:
+### Input example
 
 ```json
 {
@@ -37,8 +37,7 @@ Give CarbonOps:
   "value": 50,
   "unit": "liter"
 }
-CarbonOps returns:
-
+Output example
 json
 Copy code
 {
@@ -85,7 +84,7 @@ Dataset ingestion & normalization engine
 🔗 https://github.com/ktalpay/CarbonFactor-Parser
 
 2) CarbonFactor-API
-REST API exposing standardized factors & CO₂e calculations
+REST API exposing standardized emission factors & CO₂e calculations
 🔗 https://github.com/ktalpay/CarbonFactor-API
 
 3) CarbonOps Toolkit (this repo)
@@ -143,21 +142,20 @@ category	Fuel / transport / process / energy
 activity	Specific activity name
 unit	Unit of measurement (L, kWh, km, kg…)
 factor	Emission factor (CO₂e)
-source	DEFRA/IPCC year
-scope	Scope 1 / 2 / 3
+source	Dataset origin (DEFRA/IPCC year)
+scope	Scope 1 / 2 / 3 classification
 
-Load via HuggingFace:
-
+Load via HuggingFace
 python
 Copy code
 from datasets import load_dataset
 ds = load_dataset("ktalpay/carbonops-datasets")
-🧪 Notebooks Included
+📘 Notebooks Included
 Emission calculation demo
 
 Dataset exploration
 
-API integration notebook
+API integration demo
 
 ML model prototype (future)
 
