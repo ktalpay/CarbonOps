@@ -1,11 +1,42 @@
 [project]
 name = "carbonops"
 version = "0.0.1"
-description = "Carbon-aware DevOps CLI & SDK"
-authors = [{name = "FUTUREOPS TECHNOLOGY LTD"}]
+description = "Carbon-aware DevOps and sustainability automation toolkit"
 readme = "README.md"
+authors = [{name = "FutureOps Technology Ltd"}]
 requires-python = ">=3.9"
-dependencies = ["typer>=0.12.0", "rich>=13.0.0"]
+
+keywords = [
+    "carbon",
+    "sustainability",
+    "devops",
+    "automation",
+    "climate",
+    "emissions",
+    "AI",
+    "ML-Ops",
+    "environment",
+]
+
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering :: Information Analysis",
+    "Topic :: Software Development :: Build Tools",
+    "Topic :: Utilities",
+]
+
+dependencies = [
+    "typer>=0.12.0",
+    "rich>=13.0.0",
+]
+
+[project.urls]
+Homepage = "https://futureops.co.uk"
+Repository = "https://github.com/ktalpay/CarbonOps"
+Issues = "https://github.com/ktalpay/CarbonOps/issues"
+Documentation = "https://futureops.co.uk/docs"
 
 [project.scripts]
 carbonops = "carbonops.cli:main"
