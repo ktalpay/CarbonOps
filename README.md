@@ -1,39 +1,196 @@
 [![CI](https://github.com/ktalpay/CarbonOps/actions/workflows/ci.yml/badge.svg)](https://github.com/ktalpay/CarbonOps/actions/workflows/ci.yml)
 
+# 🌍 CarbonOps — AI/ML Ops–Ready Carbon Emission Automation Toolkit  
+**Open-source sustainability engine for carbon-intensity data, automated CO₂e calculations, DevOps carbon-aware scheduling, and ML-ready datasets.**
 
-# CarbonOps
+CarbonOps is a modular, open-source sustainability toolkit designed to automate and standardize carbon-emission workflows using officially published datasets from **DEFRA**, **IPCC**, and global GHG reporting standards.
 
-CarbonOps is an open‑source, carbon‑aware DevOps toolkit. It lets you:
-- collect & normalise grid carbon‑intensity data,
-- schedule CI/CD & batch workloads in lower‑carbon windows,
-- report grams CO₂e per build/release at repo level.
+CarbonOps provides:
 
-> Status: **pre‑alpha (v0.0.1)** — API may change.
+- **Dataset ingestion & normalization** (CarbonFactor-Parser)  
+- **REST API for CO₂e calculations & factor lookup** (CarbonFactor-API)  
+- **CLI + DevOps automation workflows** (CarbonOps Toolkit)  
+- **HuggingFace datasets + notebooks + examples**  
+- **ML-Ops–friendly data pipelines** for future model training  
 
-## Quickstart
+> Status: **pre-alpha (v0.0.1)** — API may evolve.
 
-```bash
+---
+
+# 🔥 Why CarbonOps?
+
+Modern companies struggle with:
+
+- Manual carbon reporting  
+- Inconsistent datasets  
+- Excel-based workflows  
+- Lack of reproducibility  
+- No automation or ML-driven estimation  
+
+**CarbonOps standardizes the entire pipeline.**
+
+Give CarbonOps:
+
+```json
+{
+  "activity": "diesel",
+  "value": 50,
+  "unit": "liter"
+}
+CarbonOps returns:
+
+json
+Copy code
+{
+  "co2e": 134.5,
+  "factor": 2.69,
+  "source": "DEFRA 2023",
+  "scope": 1
+}
+✔ Reproducible
+✔ Machine-readable
+✔ API-ready
+✔ ML-Ops compatible
+
+🏗 Architecture
+yaml
+Copy code
+                +----------------------+
+                |  DEFRA / IPCC / GHGP |
+                |    Raw Datasets      |
+                +----------+-----------+
+                           |
+                           v
+                 CarbonFactor-Parser
+               (Dataset ingestion layer)
+                           |
+                           v
+                 Normalized Carbon Factors
+                           |
+                           v
+                   CarbonFactor-API
+               (REST API & computation)
+                           |
+                           v
+                     CarbonOps Toolkit
+       CLI • Workflows • DevOps Carbon-Aware Scheduling
+                           |
+                           v
+               Applications • CI/CD • ML Pipelines
+Each module is fully open-source and independently installable, but designed to work together as an integrated sustainability engine.
+
+📦 Project Modules
+1) CarbonFactor-Parser
+Dataset ingestion & normalization engine
+🔗 https://github.com/ktalpay/CarbonFactor-Parser
+
+2) CarbonFactor-API
+REST API exposing standardized factors & CO₂e calculations
+🔗 https://github.com/ktalpay/CarbonFactor-API
+
+3) CarbonOps Toolkit (this repo)
+CLI + automation workflows + carbon-aware DevOps utilities
+🔗 https://github.com/ktalpay/CarbonOps
+
+🚀 Quickstart
+bash
+Copy code
 git clone https://github.com/ktalpay/CarbonOps.git
 cd CarbonOps
 pip install -e .
 carbonops version
-```
+🧮 Example Usage (Python)
+python
+Copy code
+from carbonops import CarbonOpsClient
 
-## Features (v0.1 target)
-- Python CLI (`typer`) and minimal SDK.
-- Region adapters for `GB` (National Grid), `EU`, and generic custom CSV.
-- Policy engine: `delay | relocate | run-now` with thresholds.
-- GitHub Action to annotate PRs with CO₂e per build.
-- Metrics export: JSON and OpenMetrics format.
+client = CarbonOpsClient("https://api.carbonops.io")
 
-## Roadmap
-- [ ] v0.0.1 repo bootstrap (this commit)
-- [ ] v0.0.2 carbon-intensity adapters + simple scheduler
-- [ ] v0.0.3 GitHub Action + per-repo CO₂e report
-- [ ] v0.1.0 first pilot + docs site
+result = client.calculate(
+    activity="diesel",
+    value=50,
+    unit="liter"
+)
 
-## Contributing
-Issues and PRs are welcome. See [`CONTRIBUTING.md`](CONTRIBUTING.md).
+print(result)
+🛠 Installation
+CLI
+bash
+Copy code
+pip install carbonops
+carbonops calculate diesel 50 liter
+API Client
+bash
+Copy code
+pip install carbonops-api
+Docker
+bash
+Copy code
+docker run carbonops/api:latest
+📘 HuggingFace Resources
+Dataset
+https://huggingface.co/datasets/ktalpay/carbonops-datasets
 
-## License
-MIT — see [`LICENSE`](LICENSE).
+Notebooks
+https://huggingface.co/ktalpay/carbonops-notebooks
+
+Model / Assistant
+https://huggingface.co/ktalpay/carbonops-assistant
+
+📊 Dataset Structure
+Column	Description
+category	Fuel / transport / process / energy
+activity	Specific activity name
+unit	Unit of measurement (L, kWh, km, kg…)
+factor	Emission factor (CO₂e)
+source	DEFRA/IPCC year
+scope	Scope 1 / 2 / 3
+
+Load via HuggingFace:
+
+python
+Copy code
+from datasets import load_dataset
+ds = load_dataset("ktalpay/carbonops-datasets")
+🧪 Notebooks Included
+Emission calculation demo
+
+Dataset exploration
+
+API integration notebook
+
+ML model prototype (future)
+
+🔮 Roadmap
+v0.0.1 (current)
+Repo bootstrap + basic CLI
+
+v0.0.2
+Carbon-intensity adapters + simple scheduler
+
+v0.0.3
+GitHub Action + per-repo CO₂e reporting
+
+v0.1.0
+First pilot + documentation site
+
+v2.0 (future)
+ML-assisted estimators (missing-value inference)
+
+v3.0 (future)
+Carbon-aware CI/CD
+Kubernetes carbon scheduling
+
+🤝 Contributing
+Issues and PRs welcome.
+See CONTRIBUTING.md.
+
+🧾 License
+MIT — see LICENSE.
+
+👤 Maintainer
+Kürşat Alpay
+Senior .NET & AI/ML Ops Engineer
+Founder @ FutureOps → https://futureops.co.uk
+GitHub: https://github.com/ktalpay
+LinkedIn: https://linkedin.com/in/kursat-alpay
