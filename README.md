@@ -37,23 +37,29 @@ Modern organizations face major challenges:
   "value": 50,
   "unit": "liter"
 }
-Output example
-json
-Copy code
+```
+
+### Output example
+
+```json
 {
   "co2e": 134.5,
   "factor": 2.69,
   "source": "DEFRA 2023",
   "scope": 1
 }
-✔ Reproducible
-✔ Machine-readable
-✔ API-ready
-✔ ML-Ops compatible
+```
 
-🏗 Architecture
-yaml
-Copy code
+✔ Reproducible  
+✔ Machine-readable  
+✔ API-ready  
+✔ ML-Ops compatible  
+
+---
+
+# 🏗 Architecture
+
+```
                 +----------------------+
                 |  DEFRA / IPCC / GHGP |
                 |    Raw Datasets      |
@@ -76,31 +82,42 @@ Copy code
                            |
                            v
                Applications • CI/CD • ML Pipelines
+```
+
 Each module is fully open-source and independently installable, but designed to work together as an integrated sustainability engine.
 
-📦 Project Modules
-1) CarbonFactor-Parser
-Dataset ingestion & normalization engine
-🔗 https://github.com/ktalpay/CarbonFactor-Parser
+---
 
-2) CarbonFactor-API
-REST API exposing standardized emission factors & CO₂e calculations
-🔗 https://github.com/ktalpay/CarbonFactor-API
+# 📦 Project Modules
 
-3) CarbonOps Toolkit (this repo)
-CLI + automation workflows + carbon-aware DevOps utilities
-🔗 https://github.com/ktalpay/CarbonOps
+### **1) CarbonFactor-Parser**  
+Dataset ingestion & normalization engine  
+🔗 https://github.com/ktalpay/CarbonFactor-Parser  
 
-🚀 Quickstart
-bash
-Copy code
+### **2) CarbonFactor-API**  
+REST API exposing standardized emission factors & CO₂e calculations  
+🔗 https://github.com/ktalpay/CarbonFactor-API  
+
+### **3) CarbonOps Toolkit (this repo)**  
+CLI + automation workflows + carbon-aware DevOps utilities  
+🔗 https://github.com/ktalpay/CarbonOps  
+
+---
+
+# 🚀 Quickstart
+
+```bash
 git clone https://github.com/ktalpay/CarbonOps.git
 cd CarbonOps
 pip install -e .
 carbonops version
-🧮 Example Usage (Python)
-python
-Copy code
+```
+
+---
+
+# 🧮 Example Usage (Python)
+
+```python
 from carbonops import CarbonOpsClient
 
 client = CarbonOpsClient("https://api.carbonops.io")
@@ -112,83 +129,115 @@ result = client.calculate(
 )
 
 print(result)
-🛠 Installation
-CLI
-bash
-Copy code
+```
+
+---
+
+# 🛠 Installation
+
+### CLI
+
+```bash
 pip install carbonops
 carbonops calculate diesel 50 liter
-API Client
-bash
-Copy code
+```
+
+### API Client
+
+```bash
 pip install carbonops-api
-Docker
-bash
-Copy code
+```
+
+### Docker
+
+```bash
 docker run carbonops/api:latest
-📘 HuggingFace Resources
-Dataset
-https://huggingface.co/datasets/ktalpay/carbonops-datasets
+```
 
-Notebooks
-https://huggingface.co/ktalpay/carbonops-notebooks
+---
 
-Model / Assistant
-https://huggingface.co/ktalpay/carbonops-assistant
+# 📘 HuggingFace Resources
 
-📊 Dataset Structure
-Column	Description
-category	Fuel / transport / process / energy
-activity	Specific activity name
-unit	Unit of measurement (L, kWh, km, kg…)
-factor	Emission factor (CO₂e)
-source	Dataset origin (DEFRA/IPCC year)
-scope	Scope 1 / 2 / 3 classification
+### Dataset  
+https://huggingface.co/datasets/ktalpay/carbonops-datasets  
 
-Load via HuggingFace
-python
-Copy code
+### Notebooks  
+https://huggingface.co/ktalpay/carbonops-notebooks  
+
+### Model / Assistant  
+https://huggingface.co/ktalpay/carbonops-assistant  
+
+---
+
+# 📊 Dataset Structure
+
+| Column   | Description                                 |
+|----------|---------------------------------------------|
+| category | Fuel / transport / process / energy         |
+| activity | Specific activity name                      |
+| unit     | Unit of measurement (L, kWh, km, kg…)       |
+| factor   | Emission factor (CO₂e)                      |
+| source   | Dataset origin (DEFRA/IPCC year)            |
+| scope    | Scope 1 / 2 / 3 classification              |
+
+### Load via HuggingFace
+
+```python
 from datasets import load_dataset
 ds = load_dataset("ktalpay/carbonops-datasets")
-📘 Notebooks Included
-Emission calculation demo
+```
 
-Dataset exploration
+---
 
-API integration demo
+# 📘 Notebooks Included
 
-ML model prototype (future)
+- Emission calculation demo  
+- Dataset exploration  
+- API integration demo  
+- ML model prototype (future)  
 
-🔮 Roadmap
-v0.0.1 (current)
+---
+
+# 🔮 Roadmap
+
+### **v0.0.1 (current)**  
 Repo bootstrap + basic CLI
 
-v0.0.2
+### **v0.0.2**  
 Carbon-intensity adapters + simple scheduler
 
-v0.0.3
+### **v0.0.3**  
 GitHub Action + per-repo CO₂e reporting
 
-v0.1.0
+### **v0.1.0**  
 First pilot + documentation site
 
-v2.0 (future)
+### **v2.0 (future)**  
 ML-assisted estimators (missing-value inference)
 
-v3.0 (future)
-Carbon-aware CI/CD
-Kubernetes carbon scheduling
+### **v3.0 (future)**  
+Carbon-aware CI/CD  
+Kubernetes carbon scheduling  
 
-🤝 Contributing
-Issues and PRs welcome.
-See CONTRIBUTING.md.
+---
 
-🧾 License
-MIT — see LICENSE.
+# 🤝 Contributing
 
-👤 Maintainer
-Kürşat Alpay
-Senior .NET & AI/ML Ops Engineer
-Founder @ FutureOps → https://futureops.co.uk
-GitHub: https://github.com/ktalpay
+Issues and PRs welcome.  
+See [`CONTRIBUTING.md`](CONTRIBUTING.md).
+
+---
+
+# 🧾 License
+
+MIT — see [`LICENSE`](LICENSE).
+
+---
+
+# 👤 Maintainer
+
+**Kürşat Alpay**  
+Senior .NET & AI/ML Ops Engineer  
+Founder @ FutureOps → https://futureops.co.uk  
+GitHub: https://github.com/ktalpay  
 LinkedIn: https://linkedin.com/in/kursat-alpay
