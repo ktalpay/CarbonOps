@@ -57,13 +57,14 @@ The current goal is to make the repository easier to review, safer to read publi
 
 - `src/carbonops/` — Python package and CLI entry points.
 - `tests/` — basic CLI tests.
+- `docs/` — documentation baseline for architecture overview, measurement boundaries, security/confidentiality, roadmap, and repository status.
 - `README.md` — repository overview and current scope.
 - `LICENSE` — project license.
 - `CONTRIBUTING.md` — contribution guidance.
 - `CODE_OF_CONDUCT.md` — community conduct note.
 - `SECURITY.md` — security policy.
 
-Planned documentation and ADR folders will be added in later hardening work.
+ADRs are planned for later hardening work.
 
 ## Quickstart
 
@@ -78,7 +79,9 @@ carbonops version
 
 - [x] v0.0.1 repository bootstrap.
 - [x] Basic CLI version and placeholder schedule tests.
-- [ ] README reframing for pre-alpha scope.
+- [x] README reframing for pre-alpha scope.
+- [x] Documentation baseline.
+- [ ] ADR baseline.
 - [ ] Carbon-intensity adapter exploration.
 - [ ] Simple scheduling-policy experiment.
 - [ ] Reporting example with documented measurement boundaries.
