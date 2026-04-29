@@ -14,9 +14,9 @@ Completed:
 
 ## Stage 2: Documentation Baseline
 
-Status: in progress.
+Status: completed for the current baseline.
 
-Planned / current work:
+Completed:
 
 - Architecture overview.
 - Measurement boundaries.
@@ -26,9 +26,9 @@ Planned / current work:
 
 ## Stage 3: ADR Baseline
 
-Status: planned.
+Status: completed for the current baseline.
 
-Planned:
+Completed:
 
 - Carbon-aware delivery scope ADR.
 - CI/CD measurement boundaries ADR.
