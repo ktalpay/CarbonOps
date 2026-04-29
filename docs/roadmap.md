@@ -46,13 +46,13 @@ Planned:
 
 ## Stage 5: CI Decision
 
-Status: planned.
+Status: completed for the current baseline.
 
-Planned:
+Completed:
 
-- Decide whether the current workflow should be committed, revised, or removed.
-- Ensure any committed workflow runs meaningful tests.
-- Avoid presenting unreviewed CI as active evidence.
+- Added a minimal test-only GitHub Actions workflow.
+- The workflow installs the package and runs `python -m pytest -q`.
+- CI should not be presented as production-readiness evidence.
 
 ## Stage 6: Screenshot / Evidence Readiness
 
