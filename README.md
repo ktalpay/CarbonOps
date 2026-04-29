@@ -59,6 +59,7 @@ The current goal is to make the repository easier to review, safer to read publi
 - `tests/` — basic CLI tests.
 - `docs/` — documentation baseline for architecture overview, measurement boundaries, security/confidentiality, roadmap, and repository status.
 - `adr/` — architecture decision records for scope, measurement boundaries, and toolkit status.
+- `examples/` — synthetic example notes and placeholder CLI output.
 - `README.md` — repository overview and current scope.
 - `LICENSE` — project license.
 - `CONTRIBUTING.md` — contribution guidance.
@@ -86,7 +87,7 @@ carbonops version
 - [ ] Carbon-intensity adapter exploration.
 - [ ] Simple scheduling-policy experiment.
 - [ ] Reporting example with documented measurement boundaries.
-- [ ] First demo scenario.
+- [x] First synthetic demo scenario notes.
 - [ ] Architecture docs and ADRs.
 
 ## Contributing

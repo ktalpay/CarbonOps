@@ -36,13 +36,19 @@ Completed:
 
 ## Stage 4: Demo Or Example Workflow
 
-Status: planned.
+Status: completed for the current baseline.
 
-Planned:
+Completed:
 
-- Safe demo scenario.
-- Placeholder or synthetic input.
-- Example output with documented limitations.
+- Synthetic examples folder.
+- Placeholder CLI sample output.
+- Future demo scenario notes.
+
+Still planned:
+
+- Real adapter.
+- Real scheduling logic.
+- Methodology-backed reporting.
 
 ## Stage 5: CI Decision
 
