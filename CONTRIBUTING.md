@@ -1,127 +1,62 @@
-# Contributing to CarbonOps  
-Thank you for your interest in contributing to CarbonOps — an open-source sustainability toolkit by **FutureOps Technology Ltd**.
+# Contributing To CarbonOps
 
-We welcome contributions of all kinds: features, bug fixes, documentation, tests, and discussions.
+Thank you for your interest in CarbonOps.
 
----
+CarbonOps is a pre-alpha carbon-aware DevOps / CI/CD reference toolkit. Contributions should keep the repository conservative, public-safe, and clear about what is implemented versus planned.
 
-# 🛠 Development Setup
+## Development Setup
 
 ```bash
 git clone https://github.com/ktalpay/CarbonOps.git
 cd CarbonOps
-pip install -e ".[dev]"
+pip install -e .
+pip install pytest
+python -m pytest -q
 ```
 
-### Recommended tools
-- Python 3.9+
-- pytest
-- ruff (linting)
-- black (formatting)
-- typer (CLI development)
+## Repository Structure
 
----
-
-# 📁 Repository Structure
-
-```
-carbonops/
-    cli/            # CLI entrypoints
-    core/           # Calculation, models, utilities
-    adapters/       # Data sources and integrations
-tests/              # pytest test files
-docs/               # Additional documentation
+```text
+src/carbonops/     Python package and CLI entry points
+tests/             Basic CLI tests
+docs/              Documentation baseline
+adr/               Architecture decision records
+examples/          Synthetic example notes
 ```
 
----
+## Contribution Guidelines
 
-# ✔ Contribution Process
+- Keep CarbonOps clearly pre-alpha.
+- Separate implemented behavior from planned behavior.
+- Do not claim adoption, commercial impact, operational use, verified emissions reduction, or external recognition.
+- Use synthetic data for examples.
+- Do not commit credentials, private data, customer data, internal endpoints, or private source code.
+- Add tests for behavior changes.
 
-## 1) Open an Issue First  
-For all non-trivial changes, create an issue describing:
+## Pull Requests
 
-- What you want to change  
-- Why it is needed  
-- Alternatives considered  
+For non-trivial changes, open an issue or describe the reason in the pull request.
 
-## 2) Create a Feature Branch
+A useful pull request should include:
+
+- What changed.
+- Why it changed.
+- Test result.
+- Any public-safety considerations.
+
+## Running Tests
 
 ```bash
-git checkout -b feature/my-change
+python -m pytest -q
 ```
 
-## 3) Add Tests  
-All new functionality must include tests.
+## Code Style
 
-Run tests with:
+- Keep code small and readable.
+- Avoid unnecessary dependencies.
+- Use clear names.
+- Add comments only where they explain non-obvious decisions.
 
-```bash
-pytest
-```
+## Conduct
 
-## 4) Apply Formatting
-
-```bash
-ruff check .
-black .
-```
-
-## 5) Open a Pull Request  
-Your PR must include:
-
-- A clear description  
-- Reference to the issue number  
-- Test results  
-- Screenshots (if applicable)
-
-Maintainers will review your PR and may request changes.
-
----
-
-# 🧪 Running Tests
-
-```bash
-pytest -q
-```
-
----
-
-# 📝 Commit Message Guidelines
-
-We follow a simplified semantic commit style:
-
-- feat: new feature  
-- fix: bug fix  
-- docs: documentation  
-- refactor: non-functional restructuring  
-- test: test improvements  
-- chore: repo maintenance  
-
-Example:
-
-```
-feat: add DEFRA 2024 dataset adapter
-```
-
----
-
-# 🌐 Code Style
-
-- Follow PEP8  
-- Use informative variable names  
-- Keep functions small and testable  
-- Avoid unnecessary dependencies  
-- Document complex logic with docstrings  
-
----
-
-# 🤝 Community Conduct
-
-All contributors must adhere to our **Code of Conduct** (CODE_OF_CONDUCT.md).
-
----
-
-# 🙌 Thank You
-
-Your contributions help CarbonOps grow into the open sustainability standard we envision.  
-FutureOps appreciates your support!
+Please follow `CODE_OF_CONDUCT.md`.

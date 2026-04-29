@@ -1,68 +1,41 @@
-# Security Policy — CarbonOps  
-Maintained by **FutureOps Technology Ltd**
+# Security Policy
 
-CarbonOps is an open-source sustainability and DevOps automation toolkit.  
-We take the security of our users and contributors seriously.  
-This document describes how to report vulnerabilities and what level of support we provide.
-
----
+CarbonOps is pre-alpha. This policy describes how to report security issues and how the repository should treat public-safe examples.
 
 ## Supported Versions
 
-Only actively maintained versions receive security updates.
+| Version | Supported |
+|---|---|
+| 0.0.x | Best-effort review for the current pre-alpha baseline |
 
-| Version     | Supported |
-|-------------|-----------|
-| 0.1.x       | ✔ Active support |
-| 0.0.x       | ✔ Critical fixes only |
-| < 0.0.x     | ✖ Unsupported |
+## Reporting A Vulnerability
 
----
+If you believe you have found a security issue, do not create a public GitHub issue with exploit details.
 
-## Reporting a Vulnerability
+Report it to:
 
-If you believe you have found a security vulnerability that affects CarbonOps, please follow the steps below:
+```text
+security@futureops.co.uk
+```
 
-1. **Do NOT create a public GitHub issue.**  
-2. Send an email to our security team:  
-   **security@futureops.co.uk**
-3. Include the following information (if available):  
-   - Description of the vulnerability  
-   - Steps to reproduce  
-   - Potential impact  
-   - Affected versions  
-   - Your environment (OS, Python version, etc.)  
-4. You will receive an acknowledgment within **72 hours**.
+Include, if available:
 
----
+- Description of the issue.
+- Steps to reproduce.
+- Affected version or commit.
+- Local environment details.
 
-## Responsible Disclosure
+## Public-Safe Scope
 
-We request that researchers:
+CarbonOps examples should avoid:
 
-- Respect user privacy  
-- Avoid impacting production systems  
-- Give us reasonable time to remediate vulnerabilities before public disclosure  
-- Do not attempt to access data that does not belong to you  
+- Credentials.
+- Private keys.
+- Customer data.
+- Internal endpoints.
+- Private service names.
+- Non-public source code.
 
-We follow a **coordinated disclosure model** and will publicly credit researchers who responsibly report security issues, if they choose to be acknowledged.
+## Out Of Scope
 
----
-
-## Out-of-Scope Reports
-
-The following are NOT considered security vulnerabilities:
-
-- Missing best-practice security headers in development builds  
-- Rate-limiting issues on non-production endpoints  
-- Vulnerabilities in dependencies not controlled by this repo  
-- Local environment misconfiguration  
-- Social engineering against maintainers or contributors  
-
----
-
-## Contact
-
-FutureOps Security Team  
-📧 security@futureops.co.uk  
-🌍 https://futureops.co.uk
+The current repository does not provide a production platform, hosted API, deployment target, or real carbon-intensity integration. Reports that assume those features exist may be treated as documentation or roadmap feedback rather than a security vulnerability.
